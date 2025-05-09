@@ -20,6 +20,12 @@ import RewardsPage from "./pages/RewardsPage";
 import NotificationsPage from "./pages/NotificationsPage";
 import NotFound from "./pages/NotFound";
 
+// Admin routes
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminMembers from "./pages/admin/AdminMembers";
+import AdminNFC from "./pages/admin/AdminNFC";
+import AdminSettings from "./pages/admin/AdminSettings";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -43,6 +49,13 @@ const App = () => (
           <Route path="/support" element={<SupportPage />} />
           <Route path="/rewards" element={<RewardsPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/members" element={<AdminMembers />} />
+          <Route path="/admin/nfc" element={<AdminNFC />} />
+          <Route path="/admin/settings" element={<AdminSettings />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

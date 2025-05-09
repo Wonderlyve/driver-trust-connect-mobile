@@ -19,7 +19,20 @@ const LoginForm = () => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulation d'un délai d'authentification
+    // Admin login check
+    if (email === 'dtcmyadmin@dtc.com' && password === 'dtcadmin2025') {
+      setTimeout(() => {
+        setIsLoading(false);
+        toast({
+          title: "Connexion administrateur réussie",
+          description: "Bienvenue sur le panneau d'administration DTC",
+        });
+        navigate('/admin/dashboard');
+      }, 1500);
+      return;
+    }
+    
+    // Regular user login
     setTimeout(() => {
       setIsLoading(false);
       toast({

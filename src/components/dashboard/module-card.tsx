@@ -24,7 +24,7 @@ const ModuleCard = ({
 }: ModuleCardProps) => {
   const cardContent = (
     <div className={cn(
-      "module-card flex flex-col gap-2 h-full",
+      "module-card flex flex-col gap-2 p-4 rounded-lg shadow-sm h-full",
       bgColor,
       textColor,
       disabled && "opacity-50 cursor-not-allowed"

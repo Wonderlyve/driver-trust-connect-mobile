@@ -29,6 +29,15 @@ const ProfilePage = () => {
       description: 'Vos informations ont été enregistrées.',
     });
   };
+
+  const getSubscriptionBgColor = () => {
+    switch (subscriptionType) {
+      case 'standard': return 'bg-dtc-light from-dtc-gray to-dtc-gray/80';
+      case 'premium': return 'from-dtc-blue to-dtc-sky';
+      case 'premium-plus': return 'from-dtc-orange to-dtc-orange/80';
+      default: return 'from-dtc-blue to-dtc-sky';
+    }
+  };
   
   return (
     <MobileLayout title="Mon Profil" showBackButton>
@@ -40,8 +49,12 @@ const ProfilePage = () => {
           </div>
           <h2 className="text-xl font-semibold">{name}</h2>
           <p className="text-dtc-gray">{vehicleType === 'taxi' ? 'Chauffeur de Taxi' : 'Conducteur Moto'}</p>
-          <div className="bg-dtc-sky/20 text-dtc-blue px-3 py-1 rounded-full text-sm mt-2">
-            {subscriptionType === 'premium' ? 'Premium' : 'Premium+'}
+          <div className={`bg-dtc-sky/20 text-dtc-blue px-3 py-1 rounded-full text-sm mt-2 ${
+            subscriptionType === 'standard' ? 'bg-dtc-gray/20 text-dtc-gray' :
+            subscriptionType === 'premium-plus' ? 'bg-dtc-orange/20 text-dtc-orange' : ''
+          }`}>
+            {subscriptionType === 'standard' ? 'Standard' : 
+             subscriptionType === 'premium' ? 'Premium' : 'Premium+'}
           </div>
         </div>
         
@@ -161,14 +174,21 @@ const ProfilePage = () => {
           </TabsContent>
           <TabsContent value="subscription">
             <div className="bg-white rounded-lg p-4 mt-4 space-y-4">
-              <div className="bg-gradient-to-r from-dtc-blue to-dtc-sky p-4 rounded-lg text-white">
+              <div className={`bg-gradient-to-r ${getSubscriptionBgColor()} p-4 rounded-lg text-white`}>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 bg-white/20 rounded-full">
                     <CreditCard className="h-5 w-5" />
                   </div>
-                  <h3 className="font-medium">Abonnement {subscriptionType === 'premium' ? 'Premium' : 'Premium+'}</h3>
+                  <h3 className="font-medium">Abonnement {
+                    subscriptionType === 'standard' ? 'Standard' : 
+                    subscriptionType === 'premium' ? 'Premium' : 'Premium+'
+                  }</h3>
                 </div>
-                <p className="text-sm mb-4">Accès à tous les services de base et la couverture santé</p>
+                <p className="text-sm mb-4">
+                  {subscriptionType === 'standard' ? 'Accès aux services de base' : 
+                   subscriptionType === 'premium' ? 'Accès à tous les services de base et la couverture santé' : 
+                   'Accès à tous les services premium et couverture santé pour la famille'}
+                </p>
                 <p className="text-sm text-white/80">Prochain paiement: 15 mai 2025</p>
               </div>
               
@@ -183,6 +203,7 @@ const ProfilePage = () => {
                       <SelectValue placeholder="Type" />
                     </SelectTrigger>
                     <SelectContent>
+                      <SelectItem value="standard">Standard</SelectItem>
                       <SelectItem value="premium">Premium</SelectItem>
                       <SelectItem value="premium-plus">Premium+</SelectItem>
                     </SelectContent>
