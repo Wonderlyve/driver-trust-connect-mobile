@@ -5,11 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
-import { CreditCard, Calendar, ArrowUpRight } from 'lucide-react';
+import { CreditCard, Calendar, ArrowUpRight, Check } from 'lucide-react';
 
 const PaymentPage = () => {
   const [paymentTab, setPaymentTab] = useState('cotisation');
   const [progress, setProgress] = useState(65);
+  const [selectedPlan, setSelectedPlan] = useState('premium');
   
   const transactions = [
     { date: '15 Mai 2025', amount: '3,500 CDF', type: 'Cotisation', status: 'Succès' },
@@ -47,24 +48,81 @@ const PaymentPage = () => {
           </TabsList>
           
           <TabsContent value="cotisation" className="mt-6 space-y-4">
-            <div className="grid grid-cols-2 gap-3">
-              <Card>
-                <CardHeader className="p-3">
-                  <CardTitle className="text-sm">Cotisation Journalière</CardTitle>
-                </CardHeader>
-                <CardContent className="p-3 pt-0">
-                  <p className="text-2xl font-semibold">3,500 CDF</p>
-                  <Button className="w-full mt-3" size="sm">Payer</Button>
+            {/* Plan Selection */}
+            <div className="flex gap-2 overflow-x-auto pb-2">
+              <Card className={`w-1/3 min-w-[100px] cursor-pointer ${selectedPlan === 'standard' ? 'ring-2 ring-dtc-gray' : ''}`} onClick={() => setSelectedPlan('standard')}>
+                <CardContent className="p-3 text-center">
+                  <div className="w-5 h-5 mx-auto mb-1 rounded-full bg-dtc-gray flex items-center justify-center">
+                    {selectedPlan === 'standard' && <Check className="h-3 w-3 text-white" />}
+                  </div>
+                  <p className="font-medium text-xs">Standard</p>
+                  <p className="text-[10px] text-gray-500">Base</p>
                 </CardContent>
               </Card>
               
-              <Card>
+              <Card className={`w-1/3 min-w-[100px] cursor-pointer ${selectedPlan === 'premium' ? 'ring-2 ring-dtc-blue' : ''}`} onClick={() => setSelectedPlan('premium')}>
+                <CardContent className="p-3 text-center">
+                  <div className="w-5 h-5 mx-auto mb-1 rounded-full bg-dtc-blue flex items-center justify-center">
+                    {selectedPlan === 'premium' && <Check className="h-3 w-3 text-white" />}
+                  </div>
+                  <p className="font-medium text-xs">Premium</p>
+                  <p className="text-[10px] text-gray-500">Recommandé</p>
+                </CardContent>
+              </Card>
+              
+              <Card className={`w-1/3 min-w-[100px] cursor-pointer ${selectedPlan === 'premium-plus' ? 'ring-2 ring-dtc-orange' : ''}`} onClick={() => setSelectedPlan('premium-plus')}>
+                <CardContent className="p-3 text-center">
+                  <div className="w-5 h-5 mx-auto mb-1 rounded-full bg-dtc-orange flex items-center justify-center">
+                    {selectedPlan === 'premium-plus' && <Check className="h-3 w-3 text-white" />}
+                  </div>
+                  <p className="font-medium text-xs">Premium+</p>
+                  <p className="text-[10px] text-gray-500">Famille</p>
+                </CardContent>
+              </Card>
+            </div>
+          
+            <div className="grid grid-cols-2 gap-3">
+              <Card className={selectedPlan === 'standard' ? 'bg-gray-50' : selectedPlan === 'premium' ? 'bg-blue-50' : 'bg-orange-50'}>
                 <CardHeader className="p-3">
-                  <CardTitle className="text-sm">Cotisation Mensuelle</CardTitle>
+                  <CardTitle className="text-xs">Cotisation Journalière</CardTitle>
                 </CardHeader>
                 <CardContent className="p-3 pt-0">
-                  <p className="text-2xl font-semibold">90,000 CDF</p>
-                  <Button className="w-full mt-3" size="sm">Payer</Button>
+                  <p className="text-lg font-semibold">{
+                    selectedPlan === 'standard' ? '2,500' : 
+                    selectedPlan === 'premium' ? '3,500' : '5,000'
+                  } CDF</p>
+                  <Button 
+                    className="w-full mt-3 text-xs" 
+                    size="sm"
+                    style={{
+                      backgroundColor: selectedPlan === 'standard' ? '#9E9E9E' : 
+                                      selectedPlan === 'premium' ? '#0F3460' : '#FF9800'
+                    }}
+                  >
+                    Payer
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className={selectedPlan === 'standard' ? 'bg-gray-50' : selectedPlan === 'premium' ? 'bg-blue-50' : 'bg-orange-50'}>
+                <CardHeader className="p-3">
+                  <CardTitle className="text-xs">Cotisation Mensuelle</CardTitle>
+                </CardHeader>
+                <CardContent className="p-3 pt-0">
+                  <p className="text-lg font-semibold">{
+                    selectedPlan === 'standard' ? '65,000' : 
+                    selectedPlan === 'premium' ? '90,000' : '125,000'
+                  } CDF</p>
+                  <Button 
+                    className="w-full mt-3 text-xs" 
+                    size="sm"
+                    style={{
+                      backgroundColor: selectedPlan === 'standard' ? '#9E9E9E' : 
+                                      selectedPlan === 'premium' ? '#0F3460' : '#FF9800'
+                    }}
+                  >
+                    Payer
+                  </Button>
                 </CardContent>
               </Card>
             </div>

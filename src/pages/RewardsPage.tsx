@@ -147,7 +147,7 @@ const RewardsPage = () => {
           <TabsContent value="products" className="mt-6">
             <div className="grid grid-cols-2 gap-3 mb-4">
               {products.map(product => (
-                <Card key={product.id} className="overflow-hidden h-full">
+                <Card key={product.id} className="overflow-hidden h-full flex flex-col">
                   <div className="h-24">
                     <img 
                       src={product.image}
@@ -155,16 +155,16 @@ const RewardsPage = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <CardContent className="p-3">
+                  <CardContent className="p-3 flex flex-col flex-grow">
                     <h3 className="font-medium text-sm line-clamp-1">{product.name}</h3>
-                    <div className="flex items-center justify-between mt-2">
+                    <div className="flex items-center mt-auto pt-2 justify-between">
                       <div className="flex items-center gap-1 bg-dtc-blue/10 text-dtc-blue px-2 py-1 rounded-full text-xs">
                         <Gift className="h-3 w-3" />
-                        <span>{product.points} points</span>
+                        <span>{product.points}</span>
                       </div>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button size="sm" className="h-7 text-xs" onClick={() => handleProductSelect(product)}>
+                          <Button size="sm" className="h-7 text-xs px-2" onClick={() => handleProductSelect(product)}>
                             Échanger
                           </Button>
                         </DialogTrigger>

@@ -24,18 +24,18 @@ const ModuleCard = ({
 }: ModuleCardProps) => {
   const cardContent = (
     <div className={cn(
-      "module-card flex flex-col gap-3 h-full",
+      "module-card flex flex-col gap-2 h-full",
       bgColor,
       textColor,
       disabled && "opacity-50 cursor-not-allowed"
     )}>
-      <div className="flex items-center gap-3">
-        <div className="p-2 rounded-full bg-dtc-light">
+      <div className="flex items-center gap-2">
+        <div className="p-1.5 rounded-full bg-dtc-light">
           {icon}
         </div>
-        <h3 className="font-medium">{title}</h3>
+        <h3 className="font-medium text-sm">{title}</h3>
       </div>
-      <p className="text-sm">{description}</p>
+      <p className="text-xs">{description}</p>
     </div>
   );
   
