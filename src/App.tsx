@@ -8,6 +8,16 @@ import Index from "./pages/Index";
 import AuthPage from "./pages/AuthPage";
 import Dashboard from "./pages/Dashboard";
 import ProfilePage from "./pages/ProfilePage";
+import PaymentPage from "./pages/PaymentPage";
+import HistoryPage from "./pages/HistoryPage";
+import SettingsPage from "./pages/SettingsPage";
+import CreditsPage from "./pages/CreditsPage";
+import EducationPage from "./pages/EducationPage";
+import LotteryPage from "./pages/LotteryPage";
+import HealthPage from "./pages/HealthPage";
+import SupportPage from "./pages/SupportPage";
+import RewardsPage from "./pages/RewardsPage";
+import NotificationsPage from "./pages/NotificationsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +33,16 @@ const App = () => (
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/credits" element={<CreditsPage />} />
+          <Route path="/education" element={<EducationPage />} />
+          <Route path="/lottery" element={<LotteryPage />} />
+          <Route path="/health" element={<HealthPage />} />
+          <Route path="/support" element={<SupportPage />} />
+          <Route path="/rewards" element={<RewardsPage />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

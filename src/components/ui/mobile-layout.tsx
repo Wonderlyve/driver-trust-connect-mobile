@@ -1,7 +1,7 @@
 
 import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { User, Home, Settings, Menu } from 'lucide-react';
+import { User, Home, Settings, Menu, Bell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -23,10 +23,8 @@ const MobileLayout: React.FC<MobileLayoutProps> = ({
   const { toast } = useToast();
   
   const handleNotificationClick = () => {
-    toast({
-      title: "Notifications",
-      description: "Fonctionnalité à venir prochainement",
-    });
+    // Navigate to notifications page instead of showing a toast
+    window.location.href = '/notifications';
   };
   
   return (
@@ -52,10 +50,7 @@ const MobileLayout: React.FC<MobileLayoutProps> = ({
           onClick={handleNotificationClick}
           className="text-white p-1 hover:bg-dtc-blue/30"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bell">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-          </svg>
+          <Bell className="h-6 w-6" />
         </Button>
       </header>
       
@@ -69,6 +64,10 @@ const MobileLayout: React.FC<MobileLayoutProps> = ({
         <Link to="/dashboard" className="flex flex-col items-center p-1">
           <Home className="h-6 w-6 text-dtc-blue" />
           <span className="text-xs">Accueil</span>
+        </Link>
+        <Link to="/payment" className="flex flex-col items-center p-1">
+          <CreditCard className="h-6 w-6 text-dtc-gray" />
+          <span className="text-xs">Paiement</span>
         </Link>
         <Link to="/profile" className="flex flex-col items-center p-1">
           <User className="h-6 w-6 text-dtc-gray" />
@@ -84,3 +83,23 @@ const MobileLayout: React.FC<MobileLayoutProps> = ({
 };
 
 export default MobileLayout;
+
+function CreditCard(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="14" x="2" y="5" rx="2" />
+      <line x1="2" x2="22" y1="10" y2="10" />
+    </svg>
+  );
+}

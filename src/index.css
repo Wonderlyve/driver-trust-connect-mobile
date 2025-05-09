@@ -35,7 +35,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -104,6 +104,7 @@
 
 .mobile-header {
   @apply p-4 bg-dtc-blue text-white flex items-center justify-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-content {
@@ -113,10 +114,11 @@
 .mobile-footer {
   @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around p-2;
   max-width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .module-card {
-  @apply bg-white rounded-lg p-4 shadow-md transition-all hover:shadow-lg;
+  @apply bg-white rounded-xl p-4 shadow-md transition-all hover:shadow-lg;
 }
 
 .auth-container {
@@ -126,3 +128,34 @@
 .auth-card {
   @apply bg-white rounded-xl p-6 w-full max-w-md shadow-xl;
 }
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* Custom styling for the app */
+.card-gradient {
+  @apply bg-gradient-to-r from-dtc-blue to-dtc-sky text-white;
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  @apply bg-dtc-blue text-white hover:bg-dtc-blue/90 transition-colors rounded-lg;
+}
+
+.btn-secondary {
+  @apply bg-white text-dtc-blue border border-dtc-blue/20 hover:bg-gray-50 transition-colors rounded-lg;
+}
+
