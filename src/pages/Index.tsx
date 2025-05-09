@@ -1,20 +1,10 @@
 
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Index = () => {
   const navigate = useNavigate();
-  
-  // Optional: Auto-redirect after a few seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate('/auth');
-    }, 5000);
-    
-    return () => clearTimeout(timer);
-  }, [navigate]);
   
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-dtc-blue to-dtc-sky p-4">
@@ -59,6 +49,29 @@ const Index = () => {
       <div className="mt-10 text-white/80 text-sm text-center">
         <p>© 2025 Driver Trust Capital</p>
         <p className="mt-1">Tous droits réservés</p>
+        <div className="flex justify-center mt-3 gap-3">
+          <Button 
+            variant="link" 
+            className="text-white/80 hover:text-white p-0 h-auto text-xs"
+            onClick={() => navigate('/about')}
+          >
+            À propos
+          </Button>
+          <Button 
+            variant="link" 
+            className="text-white/80 hover:text-white p-0 h-auto text-xs"
+            onClick={() => navigate('/privacy')}
+          >
+            Politique de confidentialité
+          </Button>
+          <Button 
+            variant="link" 
+            className="text-white/80 hover:text-white p-0 h-auto text-xs"
+            onClick={() => navigate('/contact')}
+          >
+            Contact
+          </Button>
+        </div>
       </div>
     </div>
   );

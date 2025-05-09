@@ -18,6 +18,9 @@ import HealthPage from "./pages/HealthPage";
 import SupportPage from "./pages/SupportPage";
 import RewardsPage from "./pages/RewardsPage";
 import NotificationsPage from "./pages/NotificationsPage";
+import AboutPage from "./pages/AboutPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 
 // Admin routes
@@ -25,6 +28,8 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminMembers from "./pages/admin/AdminMembers";
 import AdminNFC from "./pages/admin/AdminNFC";
 import AdminSettings from "./pages/admin/AdminSettings";
+import AdminLottery from "./pages/admin/AdminLottery";
+import AdminAnalytics from "./pages/admin/AdminAnalytics";
 
 const queryClient = new QueryClient();
 
@@ -49,12 +54,17 @@ const App = () => (
           <Route path="/support" element={<SupportPage />} />
           <Route path="/rewards" element={<RewardsPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           
           {/* Admin Routes */}
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/members" element={<AdminMembers />} />
           <Route path="/admin/nfc" element={<AdminNFC />} />
           <Route path="/admin/settings" element={<AdminSettings />} />
+          <Route path="/admin/lottery" element={<AdminLottery />} />
+          <Route path="/admin/analytics" element={<AdminAnalytics />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

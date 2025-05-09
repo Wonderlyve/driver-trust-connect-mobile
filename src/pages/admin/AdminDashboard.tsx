@@ -12,7 +12,8 @@ import {
   User, 
   Badge, 
   Calendar, 
-  FileText
+  FileText,
+  BarChart
 } from 'lucide-react';
 
 const AdminDashboard = () => {
@@ -45,13 +46,13 @@ const AdminDashboard = () => {
       path: "/admin/payments"
     },
     {
-      title: "Rapports",
+      title: "Analyse des données",
       description: "Statistiques et analyse des données",
-      icon: <FileText className="h-5 w-5 text-dtc-orange" />,
-      path: "/admin/reports"
+      icon: <BarChart className="h-5 w-5 text-dtc-orange" />,
+      path: "/admin/analytics"
     },
     {
-      title: "Loterie",
+      title: "Gestion de la loterie",
       description: "Configuration des tirages et prix",
       icon: <Calendar className="h-5 w-5 text-dtc-blue" />,
       path: "/admin/lottery"

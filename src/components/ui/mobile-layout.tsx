@@ -1,11 +1,12 @@
 
 import React, { ReactNode, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { User, Home, Settings, Menu, Bell, X } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { User, Home, Settings, Menu, Bell, X, Info, Shield, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Separator } from '@/components/ui/separator';
 
 interface MobileLayoutProps {
   children: ReactNode;
@@ -24,6 +25,7 @@ const MobileLayout: React.FC<MobileLayoutProps> = ({
 }) => {
   const { toast } = useToast();
   const location = useLocation();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const handleNotificationClick = () => {
@@ -76,6 +78,21 @@ const MobileLayout: React.FC<MobileLayoutProps> = ({
                     <Link to="/settings" className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-white/10" onClick={() => setIsMenuOpen(false)}>
                       <Settings size={18} />
                       <span>Paramètres</span>
+                    </Link>
+                    
+                    <Separator className="my-2 bg-white/20" />
+                    
+                    <Link to="/about" className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-white/10" onClick={() => setIsMenuOpen(false)}>
+                      <Info size={18} />
+                      <span>À propos</span>
+                    </Link>
+                    <Link to="/contact" className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-white/10" onClick={() => setIsMenuOpen(false)}>
+                      <MessageSquare size={18} />
+                      <span>Contact</span>
+                    </Link>
+                    <Link to="/privacy" className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-white/10" onClick={() => setIsMenuOpen(false)}>
+                      <Shield size={18} />
+                      <span>Politique de confidentialité</span>
                     </Link>
                   </nav>
                 </div>
