@@ -21,6 +21,7 @@ import NotificationsPage from "./pages/NotificationsPage";
 import AboutPage from "./pages/AboutPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import ContactPage from "./pages/ContactPage";
+import RegisterMemberPage from "./pages/RegisterMemberPage";
 import NotFound from "./pages/NotFound";
 
 // Admin routes
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/register-member" element={<RegisterMemberPage />} />
           
           {/* Admin Routes */}
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
