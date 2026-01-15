@@ -50,7 +50,7 @@ const Dashboard = () => {
         <div className="bg-gradient-to-r from-dtc-sky to-blue-400 p-4 rounded-lg text-white">
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-sm">Vos points Driver Market</p>
+              <p className="text-sm">Vos points Caesse</p>
               <h2 className="text-3xl font-bold">1,250</h2>
             </div>
             <Button className="bg-white text-dtc-sky hover:bg-white/90 h-9">

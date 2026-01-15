@@ -25,7 +25,7 @@ const LoginForm = () => {
         setIsLoading(false);
         toast({
           title: "Connexion administrateur réussie",
-          description: "Bienvenue sur le panneau d'administration DTC",
+          description: "Bienvenue sur le panneau d'administration Caesse",
         });
         navigate('/admin/dashboard');
       }, 1500);
@@ -37,7 +37,7 @@ const LoginForm = () => {
       setIsLoading(false);
       toast({
         title: "Connexion réussie",
-        description: "Bienvenue sur Driver Trust Connect",
+        description: "Bienvenue sur Caesse",
       });
       navigate('/dashboard');
     }, 1500);

@@ -72,7 +72,7 @@ const SupportPage = () => {
               <h3 className="font-medium">Email</h3>
               <p className="text-sm mt-1">Support par email</p>
               <Button variant="outline" className="mt-3 w-full border-white text-white hover:bg-white hover:text-dtc-blue">
-                support@dtc.cd
+                support@caesse.cd
               </Button>
             </CardContent>
           </Card>
@@ -89,7 +89,7 @@ const SupportPage = () => {
               <div className="flex justify-start mb-3">
                 <div className="bg-white p-3 rounded-lg max-w-[80%] shadow-sm">
                   <p className="text-sm">Bonjour! Comment puis-je vous aider aujourd'hui?</p>
-                  <p className="text-xs text-gray-500 mt-1">Support DTC • 10:30</p>
+                  <p className="text-xs text-gray-500 mt-1">Support Caesse • 10:30</p>
                 </div>
               </div>
             </div>

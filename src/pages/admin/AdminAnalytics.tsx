@@ -47,7 +47,7 @@ const AdminAnalytics = () => {
       <div className="space-y-6 pb-6">
         <div className="bg-dtc-blue text-white p-4 rounded-lg">
           <h2 className="text-xl font-bold mb-2">Tableau de bord analytique</h2>
-          <p className="text-sm opacity-90">Statistiques et analyses des données DTC</p>
+          <p className="text-sm opacity-90">Statistiques et analyses des données Caesse</p>
         </div>
 
         <div className="grid grid-cols-2 gap-4">

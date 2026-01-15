@@ -126,7 +126,7 @@ const RewardsPage = () => {
               <div>
                 <div className="flex items-center gap-2">
                   <Gift className="h-5 w-5" />
-                  <p className="text-sm">Vos points Driver Market</p>
+                  <p className="text-sm">Vos points Caesse</p>
                 </div>
                 <h2 className="text-3xl font-bold mt-1">{totalPoints}</h2>
               </div>
