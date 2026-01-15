@@ -28,8 +28,8 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="left" className="w-[280px] sm:w-[350px]">
           <SheetHeader>
-            <SheetTitle>Driver Trust Capital</SheetTitle>
-            <SheetDescription>Programme de sécurité sociale pour chauffeurs</SheetDescription>
+            <SheetTitle>Caesse</SheetTitle>
+            <SheetDescription>Accompagnement des chauffeurs</SheetDescription>
           </SheetHeader>
           <div className="py-6">
             <div className="bg-dtc-light p-4 rounded-lg mb-4">

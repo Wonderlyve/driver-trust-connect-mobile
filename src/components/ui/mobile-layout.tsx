@@ -18,7 +18,7 @@ interface MobileLayoutProps {
 
 const MobileLayout: React.FC<MobileLayoutProps> = ({
   children,
-  title = "Driver Trust Connect",
+  title = "Caesse",
   showBackButton = false,
   showMenu = true,
   onMenuClick
@@ -53,7 +53,7 @@ const MobileLayout: React.FC<MobileLayoutProps> = ({
                 <div className="p-6 flex flex-col gap-6">
                   <div className="flex items-center gap-3">
                     <Avatar className="h-14 w-14 border-2 border-white">
-                      <AvatarImage src="/lovable-uploads/f4f6ef29-c569-411a-945d-b4574e75748d.png" alt="Profile" />
+                      <AvatarImage src="https://images.unsplash.com/photo-1539701938214-0d9736e1c16b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Profile" />
                       <AvatarFallback>AK</AvatarFallback>
                     </Avatar>
                     <div>

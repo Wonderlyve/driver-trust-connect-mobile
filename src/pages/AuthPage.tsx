@@ -12,10 +12,10 @@ const AuthPage = () => {
   return (
     <div className="auth-container">
       <div className="flex flex-col items-center mb-8 text-white">
-        <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-4">
-          <img src="/placeholder.svg" alt="Driver Trust Capital" className="w-12 h-12" />
+        <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 p-2">
+          <img src="/lovable-uploads/caesse-logo-square.png" alt="Caesse" className="w-full h-full object-contain" />
         </div>
-        <h1 className="text-2xl font-bold">Driver Trust Capital</h1>
+        <h1 className="text-2xl font-bold">Caesse</h1>
         <p className="text-white/80 mt-1">Connexion chauffeur</p>
       </div>
       
@@ -61,7 +61,7 @@ const AuthPage = () => {
       </div>
       
       <div className="mt-8 text-center text-white/70 text-sm">
-        <p>© 2025 Driver Trust Capital. Tous droits réservés.</p>
+        <p>© 2025 Caesse. Tous droits réservés.</p>
       </div>
     </div>
   );

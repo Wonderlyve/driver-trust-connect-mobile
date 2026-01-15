@@ -20,7 +20,7 @@ const PrivacyPage = () => {
           <CardContent className="p-4">
             <h3 className="font-medium mb-2">Introduction</h3>
             <p className="text-sm text-gray-600 mb-4">
-              Driver Trust Capital (DTC) s'engage à protéger la confidentialité des données personnelles de ses utilisateurs. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.
+              Caesse s'engage à protéger la confidentialité des données personnelles de ses utilisateurs. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.
             </p>
             
             <Separator className="my-4" />
@@ -76,13 +76,13 @@ const PrivacyPage = () => {
             
             <h3 className="font-medium mb-2">Contact</h3>
             <p className="text-sm text-gray-600">
-              Pour toute question concernant cette politique ou pour exercer vos droits, veuillez nous contacter à <span className="text-dtc-blue">privacy@dtc.com</span> ou via notre page de contact.
+              Pour toute question concernant cette politique ou pour exercer vos droits, veuillez nous contacter à <span className="text-dtc-blue">privacy@caesse.com</span> ou via notre page de contact.
             </p>
           </CardContent>
         </Card>
 
         <div className="text-center text-xs text-gray-500 pb-6">
-          <p>© 2025 Driver Trust Capital - Tous droits réservés</p>
+          <p>© 2025 Caesse - Tous droits réservés</p>
         </div>
       </div>
     </MobileLayout>

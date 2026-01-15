@@ -8,8 +8,8 @@ const AboutPage = () => {
     <MobileLayout title="À propos de nous">
       <div className="space-y-6">
         <div className="bg-dtc-blue text-white p-4 rounded-lg">
-          <h2 className="text-xl font-bold mb-2">Driver Trust Capital</h2>
-          <p className="text-sm opacity-90">Programme de sécurité sociale pour chauffeurs de taxi et moto en RDC</p>
+          <h2 className="text-xl font-bold mb-2">Caesse</h2>
+          <p className="text-sm opacity-90">Accompagnement des chauffeurs de taxi et moto en RDC</p>
         </div>
 
         <Card>
@@ -21,7 +21,7 @@ const AboutPage = () => {
               <div>
                 <h3 className="font-medium">Notre mission</h3>
                 <p className="text-sm text-gray-600 mt-1">
-                  Driver Trust Capital (DTC) a été fondé avec la mission d'offrir une protection financière et sociale adaptée aux chauffeurs de taxi et moto en République Démocratique du Congo, un secteur souvent négligé par les systèmes financiers traditionnels.
+                  Caesse a été fondé avec la mission d'offrir un accompagnement financier et social adapté aux chauffeurs de taxi et moto en République Démocratique du Congo, un secteur souvent négligé par les systèmes financiers traditionnels.
                 </p>
               </div>
             </div>
@@ -45,7 +45,7 @@ const AboutPage = () => {
               <div>
                 <h3 className="font-medium">Notre équipe</h3>
                 <p className="text-sm text-gray-600 mt-1">
-                  DTC est composé d'experts en microfinance, de professionnels du transport et de spécialistes en technologie financière, tous dédiés à créer des solutions innovantes et accessibles pour les chauffeurs congolais.
+                  Caesse est composé d'experts en microfinance, de professionnels du transport et de spécialistes en technologie financière, tous dédiés à créer des solutions innovantes et accessibles pour les chauffeurs congolais.
                 </p>
               </div>
             </div>
@@ -79,7 +79,7 @@ const AboutPage = () => {
         </div>
 
         <div className="text-center text-sm text-gray-500 pb-6">
-          <p>© 2025 Driver Trust Capital</p>
+          <p>© 2025 Caesse</p>
           <p className="mt-1">Tous droits réservés</p>
         </div>
       </div>
