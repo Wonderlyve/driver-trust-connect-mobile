@@ -1,7 +1,7 @@
 
 import React, { ReactNode, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { User, Home, Settings, Menu, Bell, X, Info, Shield, MessageSquare, UserPlus } from 'lucide-react';
+import { User, Home, Settings, Menu, Bell, X, Info, Shield, MessageSquare, UserPlus, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -82,6 +82,10 @@ const MobileLayout: React.FC<MobileLayoutProps> = ({
                     <Link to="/register-member" className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-white/10" onClick={() => setIsMenuOpen(false)}>
                       <UserPlus size={18} />
                       <span>Inscription membre</span>
+                    </Link>
+                    <Link to="/admin/dashboard" className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-white/10 bg-white/5" onClick={() => setIsMenuOpen(false)}>
+                      <ShieldCheck size={18} />
+                      <span>Administration</span>
                     </Link>
                     
                     <Separator className="my-2 bg-white/20" />
