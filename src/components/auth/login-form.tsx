@@ -25,7 +25,7 @@ const LoginForm = () => {
         setIsLoading(false);
         toast({
           title: "Connexion administrateur réussie",
-          description: "Bienvenue sur le panneau d'administration Caesse",
+          description: "Bienvenue sur le panneau d'administration Caresse",
         });
         navigate('/admin/dashboard');
       }, 1500);
@@ -37,7 +37,7 @@ const LoginForm = () => {
       setIsLoading(false);
       toast({
         title: "Connexion réussie",
-        description: "Bienvenue sur Caesse",
+        description: "Bienvenue sur Caresse",
       });
       navigate('/dashboard');
     }, 1500);
