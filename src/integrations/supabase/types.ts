@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      members: {
+        Row: {
+          abonnement: Database["public"]["Enums"]["subscription_type"]
+          avenue: string
+          commune: string
+          created_at: string
+          date_naissance: string
+          etat_civil: Database["public"]["Enums"]["marital_status"]
+          id: string
+          metier: string
+          nfc_link: string | null
+          nom: string
+          nombre_enfants: number
+          numero: string
+          points: number
+          post_nom: string
+          prenom: string
+          updated_at: string
+        }
+        Insert: {
+          abonnement?: Database["public"]["Enums"]["subscription_type"]
+          avenue: string
+          commune: string
+          created_at?: string
+          date_naissance: string
+          etat_civil: Database["public"]["Enums"]["marital_status"]
+          id?: string
+          metier: string
+          nfc_link?: string | null
+          nom: string
+          nombre_enfants?: number
+          numero: string
+          points?: number
+          post_nom: string
+          prenom: string
+          updated_at?: string
+        }
+        Update: {
+          abonnement?: Database["public"]["Enums"]["subscription_type"]
+          avenue?: string
+          commune?: string
+          created_at?: string
+          date_naissance?: string
+          etat_civil?: Database["public"]["Enums"]["marital_status"]
+          id?: string
+          metier?: string
+          nfc_link?: string | null
+          nom?: string
+          nombre_enfants?: number
+          numero?: string
+          points?: number
+          post_nom?: string
+          prenom?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +79,8 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      marital_status: "celibataire" | "marie" | "divorce" | "veuf"
+      subscription_type: "basic" | "premium" | "vip"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +207,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      marital_status: ["celibataire", "marie", "divorce", "veuf"],
+      subscription_type: ["basic", "premium", "vip"],
+    },
   },
 } as const

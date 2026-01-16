@@ -1,14 +1,14 @@
 import * as React from "react";
+import { useState } from "react";
 import MobileLayout from "@/components/ui/mobile-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { CalendarIcon, UserPlus } from "lucide-react";
+import { CalendarIcon, UserPlus, Loader2 } from "lucide-react";
 import { format, differenceInYears } from "date-fns";
 import { fr } from "date-fns/locale";
 import { cn } from "@/lib/utils";
@@ -23,6 +23,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { supabase } from "@/integrations/supabase/client";
 
 // Schéma de validation Zod avec messages détaillés
 const memberFormSchema = z.object({
@@ -83,8 +84,17 @@ const memberFormSchema = z.object({
 
 type MemberFormValues = z.infer<typeof memberFormSchema>;
 
+// Map form subscription values to database enum values
+const subscriptionMap: Record<string, "basic" | "premium" | "vip"> = {
+  "mensuel": "basic",
+  "trimestriel": "basic", 
+  "semestriel": "premium",
+  "annuel": "vip",
+};
+
 const RegisterMemberPage = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<MemberFormValues>({
     resolver: zodResolver(memberFormSchema),
@@ -102,13 +112,48 @@ const RegisterMemberPage = () => {
     },
   });
 
-  const onSubmit = (data: MemberFormValues) => {
-    toast({
-      title: "Inscription réussie",
-      description: `${data.prenom} ${data.nom} a été enregistré avec succès.`
-    });
+  const onSubmit = async (data: MemberFormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Generate unique NFC link
+      const nfcLink = `caesse-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+      
+      const { error } = await supabase.from("members").insert({
+        nom: data.nom,
+        post_nom: data.postNom || "",
+        prenom: data.prenom,
+        date_naissance: format(data.dateNaissance, "yyyy-MM-dd"),
+        metier: data.metier,
+        avenue: data.avenue,
+        numero: data.numero,
+        commune: data.commune,
+        etat_civil: data.etatCivil as "celibataire" | "marie" | "divorce" | "veuf",
+        nombre_enfants: data.nombreEnfants ? parseInt(data.nombreEnfants) : 0,
+        abonnement: subscriptionMap[data.abonnement] || "basic",
+        nfc_link: nfcLink,
+      });
 
-    form.reset();
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Inscription réussie",
+        description: `${data.prenom} ${data.nom} a été enregistré avec succès.`
+      });
+
+      form.reset();
+    } catch (error: any) {
+      console.error("Error registering member:", error);
+      toast({
+        title: "Erreur d'inscription",
+        description: error.message || "Une erreur est survenue lors de l'inscription.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const communes = [
@@ -372,9 +417,13 @@ const RegisterMemberPage = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full mt-6">
-                  <UserPlus className="mr-2 h-4 w-4" />
-                  Enregistrer le membre
+                <Button type="submit" className="w-full mt-6" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <UserPlus className="mr-2 h-4 w-4" />
+                  )}
+                  {isSubmitting ? "Enregistrement..." : "Enregistrer le membre"}
                 </Button>
               </form>
             </Form>
