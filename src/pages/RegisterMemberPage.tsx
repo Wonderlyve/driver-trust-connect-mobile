@@ -117,7 +117,7 @@ const RegisterMemberPage = () => {
     
     try {
       // Generate unique NFC link
-      const nfcLink = `caesse-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+      const nfcLink = `caresse-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
       
       const { error } = await supabase.from("members").insert({
         nom: data.nom,
