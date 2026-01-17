@@ -22,7 +22,7 @@ const NotificationsPage = () => {
     {
       id: 2,
       title: "Points ajoutés",
-      message: "Vous avez gagné 50 points Caresse pour votre cotisation d'aujourd'hui.",
+      message: "Vous avez gagné 50 points Caesse pour votre cotisation d'aujourd'hui.",
       date: "Aujourd'hui, 10:30",
       type: "rewards",
       read: false,

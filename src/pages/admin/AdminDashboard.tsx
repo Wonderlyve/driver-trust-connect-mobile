@@ -60,11 +60,11 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <MobileLayout title="Administration Caresse">
+    <MobileLayout title="Administration Caesse">
       <div className="space-y-6">
         <div className="bg-dtc-blue text-white p-4 rounded-lg">
           <h2 className="text-xl font-bold mb-2">Tableau de bord administrateur</h2>
-          <p className="text-sm opacity-90">Gestion du système Caresse</p>
+          <p className="text-sm opacity-90">Gestion du système Caesse</p>
         </div>
         
         <div className="grid grid-cols-2 gap-4">

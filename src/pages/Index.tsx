@@ -9,10 +9,10 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-dtc-blue to-dtc-sky p-4">
       <div className="relative w-32 h-32 bg-white rounded-xl flex items-center justify-center mb-6 animate-bounce shadow-lg p-2">
-        <img src="/lovable-uploads/caesse-logo-square.png" alt="Caresse" className="w-full h-full object-contain" />
+        <img src="/lovable-uploads/caesse-logo-square.png" alt="Caesse" className="w-full h-full object-contain" />
       </div>
       
-      <h1 className="text-3xl font-bold text-white mb-2 text-center">Caresse</h1>
+      <h1 className="text-3xl font-bold text-white mb-2 text-center">Caesse</h1>
       <p className="text-white/90 text-center mb-10 max-w-xs">
         Cadre d'Accompagnement et d'Entraide pour la Sécurité Socio-Économique
       </p>
@@ -44,7 +44,7 @@ const Index = () => {
       </div>
       
       <div className="mt-10 text-white/80 text-sm text-center">
-        <p>© 2025 Caresse</p>
+        <p>© 2025 Caesse</p>
         <p className="mt-1">Tous droits réservés</p>
         <div className="flex justify-center mt-3 gap-3">
           <Button 
