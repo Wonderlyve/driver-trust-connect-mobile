@@ -17,18 +17,6 @@ const Index = () => {
         Cadre d'Accompagnement et d'Entraide pour la Sécurité Socio-Économique
       </p>
       
-      <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-8 max-w-xs w-full">
-        <div className="flex flex-col gap-4 items-center">
-          <Avatar className="h-20 w-20 border-4 border-white">
-            <AvatarImage src="https://images.unsplash.com/photo-1539701938214-0d9736e1c16b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Driver Profile" />
-            <AvatarFallback>AK</AvatarFallback>
-          </Avatar>
-          <div className="text-center text-white">
-            <h2 className="font-medium text-lg">Bienvenue</h2>
-            <p className="text-sm text-white/80">Connectez-vous pour accéder à votre compte</p>
-          </div>
-        </div>
-      </div>
       
       <div className="w-full max-w-xs space-y-4">
         <Button 
