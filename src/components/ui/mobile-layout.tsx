@@ -18,7 +18,7 @@ interface MobileLayoutProps {
 
 const MobileLayout: React.FC<MobileLayoutProps> = ({
   children,
-  title = "Caesse",
+  title = "Caresse",
   showBackButton = false,
   showMenu = true,
   onMenuClick

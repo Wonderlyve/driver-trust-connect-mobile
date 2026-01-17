@@ -258,7 +258,7 @@ const HealthPage = () => {
                     <ClipboardList className="h-5 w-5 text-dtc-blue" />
                     <h3 className="font-medium">Statut d'intégration</h3>
                   </div>
-                  <p className="text-sm">Votre compte Caesse est lié à la CNSS.</p>
+                  <p className="text-sm">Votre compte Caresse est lié à la CNSS.</p>
                   <p className="text-sm mt-2">Numéro CNSS: <span className="font-medium">CAS-32145-KIN</span></p>
                 </div>
               </CardContent>
